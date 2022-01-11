@@ -1,5 +1,5 @@
 version: v1.1.0
 steps:
-  - build: -f ./Dockerfile -t acrtestog.azurecr.io/base-rq/aspnet:3.1.22-alpine3.14 .
+  - build: -f ./Dockerfile -t {{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14-{{.Run.ID}} .
   - push: 
-      - acrtestog.azurecr.io/base-rq/aspnet:3.1.22-alpine3.14
+      - {{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14-{{.Run.ID}}
