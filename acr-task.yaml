@@ -2,10 +2,10 @@ version: v1.1.0
 steps:
   - build: >
     -f ./Dockerfile
-      --build-arg REGISTRY_FROM_URL={{.Values.REGISTRY_FROM_URL}} 
-      -t {{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14-{{.Run.ID}}
-      -t {{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14
-      .
+    --build-arg REGISTRY_FROM_URL={{.Values.REGISTRY_FROM_URL}} 
+    -t {{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14-{{.Run.ID}}
+    -t {{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14
+    .
   - push: 
     - "{{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14-{{.Run.ID}}"
     - "{{.Run.Registry}}/base-rq/aspnet:3.1.22-alpine3.14"
